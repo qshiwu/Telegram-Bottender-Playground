@@ -1,2 +1,2 @@
-npm run dev
-npx bottender telegram webhook set
+web: npm run dev
+web: npx bottender telegram webhook set
