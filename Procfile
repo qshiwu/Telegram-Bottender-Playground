@@ -1,2 +1,1 @@
-web: npm start
-web: npx bottender telegram webhook set
+web: npx bottender telegram webhook set -w 
