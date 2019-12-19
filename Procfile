@@ -1,1 +1,1 @@
-web: npx bottender telegram webhook set -w https://telegram-chat-ui-explorer.herokuapp.com/
+npx bottender telegram webhook set -w https://telegram-chat-ui-explorer.herokuapp.com/ &
