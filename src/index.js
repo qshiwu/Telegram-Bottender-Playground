@@ -230,6 +230,65 @@ async function deleteMessage(context) {
   await context.deleteMessage(response.messageId);
 }
 
+async function help(context) {
+  const commandPool = [
+    'sendmessage',
+    'sendmultiplemessages',
+    'sendmessagemarkdown',
+    'sendmessagehtml',
+    'sendimage',
+    'sendaudio',
+    'senddocument',
+    'sendvideo',
+    'sendanimation',
+    'sendsticker',
+    'sendvoice',
+    'sendvideonote',
+    'sendmediagroup',
+    'sendlocation',
+    'sendvenue',
+    'sendcontact',
+    'sendpollchecking',
+    'sendinvoicechecking',
+    'chatactionchecking',
+    'checkcontext',
+    'checkcontextchat',
+    'getcontextchatid',
+    'updatemessage',
+    'updatecaption',
+    'updatemedia',
+    'updatereplymarkup',
+    'sendreplykeyboard',
+    'sendonetimereplykeyboard',
+    'removereplykeyboard',
+    'sendreplyinlinekeyboard',
+    'deletemessage',
+  ];
+
+  const commandName = commandPool[Math.floor(Math.random() * commandPool.length)];
+  const replyMarkup = {
+    keyboard: [
+      [
+        {
+          text: `/${commandName}`,
+        },
+      ],
+    ],
+    one_time_keyboard: true,
+  };
+
+  const userName = context.event.message.chat.firstName;
+  await context.sendMessage(
+    `Hello *${userName}*!\nThis is [Bottender\'s](https://bottender.js.org/) playground for testing Telegram Chat UI! 
+    \nTry to input \`\/${commandName}\``,
+
+    // of Send *Markdown* Message with `,
+    { replyMarkup, parseMode: 'markdown', disable_web_page_preview: 'true' }
+  );
+
+  // /sendMessage
+}
+
 async function sendReplyKeyboard(context) {
   const replyMarkup = {
     keyboard: [
@@ -286,18 +345,12 @@ async function sendReplyInlineKeyboard(context) {
 }
 
 module.exports = async function App(context) {
+  // a little feature to get sticker id
   if (context.event.isSticker) {
     await context.sendText(`received the sticker: ${context.event.sticker.fileId}`);
   }
 
-  /*
-  if (context.event.isSticker) {
-    await context.sendText(`sticker`);
-    await context.sendText(`received the sticker: ${context.event.fileid}`);
-  }*/
   return router([
-    text('hi', SayHi), // return SayHi when receiving hi text message
-    text('hello', SayHello), // return SayHello when receiving hello text message
     text(/\/sendMessage/i, sendMessage), // botFather only accepts commands in small captials
     text(/\/sendMultipleMessages/i, sendMultipleMessages),
     text(/\/sendMessageMarkdown/i, sendMessageMarkdown),
@@ -329,6 +382,8 @@ module.exports = async function App(context) {
     text(/\/removeReplyKeyboard/i, removeReplyKeyboard),
     text(/\/sendReplyInlineKeyboard/i, sendReplyInlineKeyboard),
     text(/\/deleteMessage/i, deleteMessage),
+    text(/(help|start|hi|yo|hello|hey|hay|你好|您好)/i, help),
+    // text(/start/i, help),
     text('*', Unknown), // Unknwon
   ]);
 };
