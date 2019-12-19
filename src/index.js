@@ -294,10 +294,10 @@ async function sendReplyKeyboard(context) {
     keyboard: [
       [
         {
-          text: 'hi',
+          text: 'I Love Bottender',
         },
         {
-          text: 'yo',
+          text: '/help',
         },
       ],
     ],
@@ -309,10 +309,10 @@ async function sendOnetimeReplyKeyboard(context) {
     keyboard: [
       [
         {
-          text: 'hi',
+          text: 'I Love Bottender',
         },
         {
-          text: 'yo',
+          text: '/help',
         },
       ],
     ],
@@ -331,12 +331,12 @@ async function sendReplyInlineKeyboard(context) {
     inline_keyboard: [
       [
         {
-          text: 'hi',
-          url: 'https://www.example.com',
+          text: 'Bottender GitHub',
+          url: 'https://github.com/yoctol/bottender',
         },
         {
-          text: 'yo',
-          callback_data: 'yo',
+          text: 'Bottender Doc',
+          url: 'https://bottender.js.org/',
         },
       ],
     ],
