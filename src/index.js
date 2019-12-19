@@ -11,11 +11,14 @@ async function SayHello(context) {
 }
 
 async function Unknown(context) {
-  await context.sendText('Unknown');
+  await context.sendMessage('Support [Bottender](https://github.com/yoctol/bottender) by 1 Star', {
+    parseMode: 'markdown',
+  });
 }
 
 async function sendMessage(context) {
   response = await context.sendMessage('Testing Send Message');
+  await context.sendMessage('The context of the sent message:');
   dumpSentMessageInfo(context, response);
 }
 
@@ -23,8 +26,6 @@ async function sendMultipleMessages(context) {
   for (var i = 0; i < 5; i++) {
     response = await context.sendMessage(`Testing Send Message ${i}`);
   }
-
-  //dumpSentMessageInfo(context, response);
 }
 
 async function dumpSentMessageInfo(context, response) {
@@ -75,10 +76,6 @@ async function sendAnimation(context) {
   await context.sendAnimation(
     'https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4'
   );
-}
-
-async function getStickerFileId(context) {
-  await context.sendText(`sticker`);
 }
 
 async function sendStickerNice(context) {
@@ -139,13 +136,13 @@ async function sendVenue(context) {
 async function sendContact(context) {
   //await context.sendText(`I am from Taiwan :D`);
   await context.sendContact({
-    phoneNumber: '123456',
-    firstName: 'first',
+    phoneNumber: '1234567890',
+    firstName: 'Bottender Team',
   });
 }
 
 async function sendPoll(context) {
-  await context.sendText('Sending Poll');
+  await context.sendText('Sending Poll (not visible in 1:1 chat)');
   await context.sendPoll('Which one is your favorite food?', ['🍔', '🍕', '🌮', '🍱']);
 }
 
