@@ -17,8 +17,6 @@ sendcontact - Test sendContact
 sendpollchecking - Test sendPollchecking
 sendinvoicechecking - Test sendInvoicechecking
 chatactionchecking - Test chatActionchecking
-checkcontext - Test checkContext
-checkcontextchat - Test checkContextChat
 getcontextchatid - Test getContextChatId
 updatemessage - Test updateMessage
 updatecaption - Test updateCaption

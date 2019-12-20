@@ -2,14 +2,6 @@ const DEBUG = true;
 
 const { router, text } = require('bottender/router');
 
-async function SayHi(context) {
-  await context.sendText('Hi!');
-}
-
-async function SayHello(context) {
-  await context.sendText('Hello!');
-}
-
 async function Unknown(context) {
   await context.sendMessage('Support [Bottender](https://github.com/yoctol/bottender) by 1 Star', {
     parseMode: 'markdown',
@@ -167,17 +159,6 @@ async function chatAction(context) {
   await context.sendMessage('Text after typing');
 }
 
-async function checkContext(context) {
-  const jsonContext = JSON.stringify(context, null, 4);
-  await context.sendText(`${jsonContext}`);
-}
-
-async function checkContextChat(context) {
-  const jsonContext = JSON.stringify(context.event._rawEvent.message.chat, null, 4);
-  // const jsonContext = JSON.stringify(context.event._rawEvent, null, 4);
-  await context.sendText(`${jsonContext}`);
-}
-
 async function getContextChatId(context) {
   const jsonContext = JSON.stringify(context.event._rawEvent.message.chat, null, 4);
   await context.sendText(`${jsonContext}`);
@@ -248,8 +229,6 @@ async function help(context) {
     'sendpollchecking',
     'sendinvoicechecking',
     'chatactionchecking',
-    'checkcontext',
-    'checkcontextchat',
     'getcontextchatid',
     'updatemessage',
     'updatecaption',
@@ -367,8 +346,6 @@ module.exports = async function App(context) {
     text(/\/sendPoll/i, sendPoll), // checking
     text(/\/sendInvoice/i, sendInvoice), // checking
     text(/\/chatAction/i, chatAction), // checking
-    text(/\/checkContext/i, checkContext),
-    text(/\/checkContextChat/i, checkContextChat),
     text(/\/getContextChatId/i, getContextChatId),
     text(/\/updateMessage/i, updateMessage),
     text(/\/updateCaption/i, updateCaption),
