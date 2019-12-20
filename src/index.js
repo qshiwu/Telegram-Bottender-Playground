@@ -134,7 +134,8 @@ async function sendContact(context) {
 }
 
 async function sendPoll(context) {
-  await context.sendText('Sending Poll (not visible in 1:1 chat)');
+  await context.sendText('Sending Poll');
+  await context.sendText('(This feature only works in group or channel)');
   await context.sendPoll('Which one is your favorite food?', ['🍔', '🍕', '🌮', '🍱']);
 }
 
@@ -327,35 +328,35 @@ module.exports = async function App(context) {
   }
 
   return router([
-    text(/\/sendMessage/i, sendMessage), // botFather only accepts commands in small captials
-    text(/\/sendMultipleMessages/i, sendMultipleMessages),
-    text(/\/sendMessageMarkdown/i, sendMessageMarkdown),
-    text(/\/sendMessageHTML/i, sendMessageHTML),
-    text(/\/sendImage/i, sendImage),
-    text(/\/sendAudio/i, sendAudio),
-    text(/\/sendDocument/i, sendDocument),
-    text(/\/sendVideo/i, sendVideo),
-    text(/\/sendAnimation/i, sendAnimation),
-    text(/\/sendSticker/i, sendStickerNice),
-    text(/\/sendVoice/i, sendVoice),
-    text(/\/sendVideoNote/i, sendVideoNote),
-    text(/\/sendMediaGroup/i, sendMediaGroup),
-    text(/\/sendLocation/i, sendLocation),
-    text(/\/sendVenue/i, sendVenue),
-    text(/\/sendContact/i, sendContact),
-    text(/\/sendPoll/i, sendPoll), // checking
-    text(/\/sendInvoice/i, sendInvoice), // checking
-    text(/\/chatAction/i, chatAction), // checking
-    text(/\/getContextChatId/i, getContextChatId),
-    text(/\/updateMessage/i, updateMessage),
-    text(/\/updateCaption/i, updateCaption),
-    text(/\/updateMedia/i, updateMedia),
-    text(/\/updateReplyMarkup/i, updateReplyMarkup),
-    text(/\/sendReplyKeyboard/i, sendReplyKeyboard),
-    text(/\/sendOnetimeReplyKeyboard/i, sendOnetimeReplyKeyboard),
-    text(/\/removeReplyKeyboard/i, removeReplyKeyboard),
-    text(/\/sendReplyInlineKeyboard/i, sendReplyInlineKeyboard),
-    text(/\/deleteMessage/i, deleteMessage),
+    text(/\/sendMessage$/i, sendMessage), // botFather only accepts commands in small captials
+    text(/\/sendMultipleMessages$/i, sendMultipleMessages),
+    text(/\/sendMessageMarkdown$/i, sendMessageMarkdown),
+    text(/\/sendMessageHTML$/i, sendMessageHTML),
+    text(/\/sendImage$/i, sendImage),
+    text(/\/sendAudio$/i, sendAudio),
+    text(/\/sendDocument$/i, sendDocument),
+    text(/\/sendVideo$/i, sendVideo),
+    text(/\/sendAnimation$/i, sendAnimation),
+    text(/\/sendSticker$/i, sendStickerNice),
+    text(/\/sendVoice$/i, sendVoice),
+    text(/\/sendVideoNote$/i, sendVideoNote),
+    text(/\/sendMediaGroup$/i, sendMediaGroup),
+    text(/\/sendLocation$/i, sendLocation),
+    text(/\/sendVenue$/i, sendVenue),
+    text(/\/sendContact$/i, sendContact),
+    text(/\/sendPoll$/i, sendPoll), // checking
+    // text(/\/sendInvoice$/i, sendInvoice), // checking
+    text(/\/chatAction$/i, chatAction), // checking
+    text(/\/getContextChatId$/i, getContextChatId),
+    text(/\/updateMessage$/i, updateMessage),
+    text(/\/updateCaption$/i, updateCaption),
+    text(/\/updateMedia$/i, updateMedia),
+    text(/\/updateReplyMarkup$/i, updateReplyMarkup),
+    text(/\/sendReplyKeyboard$/i, sendReplyKeyboard),
+    text(/\/sendOnetimeReplyKeyboard$/i, sendOnetimeReplyKeyboard),
+    text(/\/removeReplyKeyboard$/i, removeReplyKeyboard),
+    text(/\/sendReplyInlineKeyboard$/i, sendReplyInlineKeyboard),
+    text(/\/deleteMessage$/i, deleteMessage),
     text(/(help|start|hi|yo|hello|hey|hay|你好|您好)/i, help),
     // text(/start/i, help),
     text('*', Unknown), // Unknwon
