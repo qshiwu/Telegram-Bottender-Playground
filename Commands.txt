@@ -1,4 +1,3 @@
-
 sendmessage - Test sendMessage 
 sendmultiplemessages - Test sendMultipleMessages
 sendmessagemarkdown - Test sendMessageMarkdown
@@ -15,7 +14,7 @@ sendmediagroup - Test sendMediaGroup
 sendlocation - Test sendLocation
 sendvenue - Test sendVenue
 sendcontact - Test sendContact
-sendpollchecking - Test sendPollchecking
+sendpoll - Test sendPoll
 chatactionchecking - Test chatActionchecking
 getcontextchatid - Test getContextChatId
 updatemessage - Test updateMessage

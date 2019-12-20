@@ -227,7 +227,7 @@ async function help(context) {
     'sendlocation',
     'sendvenue',
     'sendcontact',
-    'sendpollchecking',
+    'sendpoll',
     'sendinvoicechecking',
     'chatactionchecking',
     'getcontextchatid',
