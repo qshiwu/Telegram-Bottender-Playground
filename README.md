@@ -1,3 +1,5 @@
+ <p><img width="400" src="https://user-images.githubusercontent.com/662387/71342435-c0040600-2597-11ea-8258-ae8e06c89575.gif"></p>
+
 This project was bootstrapped with
 [Bottender](https://github.com/Yoctol/bottender), and aimed to demo the basic capabiltiy of Telegram bots. The demo bot could be accessed here, [Bottender Playground on Telegram](https://t.me/@BottenderPlaygroundBot).
 
