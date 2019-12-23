@@ -1,40 +1,11 @@
 This project was bootstrapped with
-[Bottender](https://github.com/Yoctol/bottender) init script.
+[Bottender](https://github.com/Yoctol/bottender), and aimed to demo the basic capabiltiy of Telegram bots. The demo bot could be accessed here, [Bottender Playground on Telegram](https://t.me/@BottenderPlaygroundBot).
 
-## Sending Feedback
+Related Bottender Documents:
 
-Always feel free to open issue to
-[Bottender](https://github.com/Yoctol/bottender/issues).
-
-## Folder Structure
-
-After creation, your project should look like this:
-
-```
-my-bot/
-  .gitignore
-  node_modules/
-  bottender.config.js
-  index.js
-  package.json
-  README.md
-  yarn.lock
-```
-
-### index.js
-
-All functionalities start from here.\
-Mainly it's a server which listen on port 5000. You are encouraged to add more [event listener](https://bottender.js.org/docs/APIReference-Event?new)
-and [`Handler`](https://bottender.js.org/docs/APIReference-Handler?new) to enrich the bot.
-
-See more examples, please refer to
-[Bottender examples](https://github.com/Yoctol/bottender/tree/master/examples).
-
-### bottender.config.js
-
-The config file for the bot.\
-We suggests you to put all platform configs into this file and use it as a parameter
-of createServer.
+- [Setup Telegram](https://bottender.js.org/docs/next/channel-telegram-setup)
+- [Handling Telegram Events](https://bottender.js.org/docs/next/channel-telegram-handling-events)
+- [Sending Telegram Messages](https://bottender.js.org/docs/channel-telegram-handling-events)
 
 ## Available Scripts
 
